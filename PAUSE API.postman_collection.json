@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "47471683-4fea-4dbf-9b5e-07fd4e8eef09",
+		"name": "PAUSE API",
+		"description": "Postman collection for the PAUSE backend. Grouped by resource. Uses {{baseUrl}} variable.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40682027"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"uid\": \"uid123456\",\n  \"userName\": \"Alejandro\",\n  \"email\": \"alejandro@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Name or Email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"uid\": \"uid123\",\n  \"userName\": \"Nuevo Nombre\",\n  \"email\": \"nuevo@correo.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users/4",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users/4",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/users/1/details",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Create Pet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 2,\n  \"petName\": \"Nano\",\n  \"customization\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet Name",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"petName\": \"NuevoNombre\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets/1/name",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets",
+								"1",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet Customization",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customization\": \"{\\\"color\\\":\\\"#00AEEF\\\"}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets/1/customization",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets",
+								"1",
+								"customization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Equip Items",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"equippedItems\": {\n    \"head\": \"hat_red\",\n    \"eyes\": \"sunglasses\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pets/1/equip",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pets",
+								"1",
+								"equip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{prefix}}/pets/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"pets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pauses",
+			"item": [
+				{
+					"name": "Create Pause",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"durationMinutes\": 1,\n  \"type\": \"active\",\n  \"source\": \"manual\",\n  \"clientEventId\": \"evt-123\",\n  \"timestamp\": \"2025-08-18T12:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pauses",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pauses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Pauses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pauses",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pauses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pause by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pauses/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pauses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pause",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/pauses/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"pauses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"question\": \"¿Qué es MVVM?\",\n  \"userAnswer\": \"Patrón de arquitectura\",\n  \"correct\": true,\n  \"questionId\": \"q-001\",\n  \"topic\": \"android\",\n  \"clientEventId\": \"evt-456\",\n  \"timestamp\": \"2025-08-18T12:00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/reviews",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/reviews",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/reviews/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/reviews/1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Summary",
+			"item": [
+				{
+					"name": "Get Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/summary?userId=1",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"summary"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events (Batch)",
+			"item": [
+				{
+					"name": "Ingest Batch",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"events\": [\n    {\n      \"type\": \"pause\",\n      \"pause\": {\n        \"userId\": 1,\n        \"durationMinutes\": 1,\n        \"clientEventId\": \"evt-1\"\n      }\n    },\n    {\n      \"type\": \"review\",\n      \"review\": {\n        \"userId\": 1,\n        \"question\": \"Q1\",\n        \"userAnswer\": \"A\",\n        \"correct\": true,\n        \"clientEventId\": \"evt-2\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}{{prefix}}/events/batch",
+							"host": [
+								"{{baseUrl}}{{prefix}}"
+							],
+							"path": [
+								"events",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "prefix",
+			"value": "/api/pause"
+		}
+	]
+}
